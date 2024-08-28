@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+</head>
+<body class="font-domine">
+   <header class="sticky top-0 z-20  bg-purple-100 text-purple-800 w-full h-12 md:h-auto dark:bg-slate-800 shadow-md dark:shadow-zinc-700">
+        <div class="flex flex-row justify-between md:items-end px-5 md:px-100 py-2">
+            <div class="md:hidden">
+                
+                <ion-icon name="menu-outline"></ion-con>
+            </div>
+            <div class="relative" >
+                <a href="index.html">
+                    <div class="absolute top-0 z-10 h-16 w-16 md:h-24 md:w-24 rounded-full outline-4 outline-dotted outline-purple-700 animate-rotating duration-500 ease-out hover:animate-none cursor-pointer">
+                    </div>
+                    <img src="./src/images/logo.png" class="h-16 w-24 md:h-24 md:24 z-20" alt="logo" srcset="">
+                </a>
+            </div>
+            <div class="flex items-start md:items-center">
+                <div class="hidden md:grid grid-cols-6 gap-x-10 grow items-stretch place-content-center justify-items-center px-5 max-w-7xl dark:text-white ">
+                    <a href="index.html">
+                        <div >
+                            Home
+                        </div>
+                    </a>
+                    <a href="menu.html">
+                        <div>
+                            Menus
+                        </div>
+                    </a>
+                    <a href="gallery.html">
+                        <div>
+                            Gallery
+                        </div>
+                    </a>
+                    <a href="blogs.html">
+                        <div>
+                            Blogs
+                        </div>
+                    </a>
+                    <a href="faqs.html">
+                        <div class="border-b-4 border-purple-400">
+                            Faq
+                        </div>
+                    </a>
+                    <a href="contacts.html">
+                        <div>
+                            Contacts
+                        </div>
+                    </a>
+
+                </div>
+                <div class="w-5 h-5">
+                    <div id="light" class=" cursor-pointer place-self-center dark:text-white" title="Normal Mode" onclick="changeTheme('light')">
+                        <ion-icon name="sunny-outline"></ion-icon>
+                    </div>
+                    <div id="dark" class="hidden cursor-pointer place-self-center" title="Dark mode" onclick="changeTheme('dark')">
+                        <ion-icon name="moon"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </header>
+
+
+
+   <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="./src/gallery/image1.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="./src/gallery/image11.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+
+   <script>
+        let lightIcon = document.getElementById('light')
+        let darkIcon = document.getElementById('dark')
+        changeTheme(localStorage.theme)
+        function changeTheme(theme){
+            if(theme === "light"){
+                document.documentElement.classList.remove('dark')
+                lightIcon.classList.add('hidden')
+                darkIcon.classList.remove('hidden')
+            }else if(theme === 'dark'){
+                document.documentElement.classList.add('dark')
+                lightIcon.classList.remove('hidden')
+                darkIcon.classList.add('hidden')
+            }
+            localStorage.setItem('theme', theme)
+        }
+   </script>
+
+</body>
+</html>

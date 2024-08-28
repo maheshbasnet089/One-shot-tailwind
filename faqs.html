@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+</head>
+<body class="font-domine">
+   <header class="sticky top-0 z-20  bg-purple-100 text-purple-800 w-full h-12 md:h-auto dark:bg-slate-800 shadow-md dark:shadow-zinc-700">
+        <div class="flex flex-row justify-between md:items-end px-5 md:px-100 py-2">
+            <div class="md:hidden">
+                
+                <ion-icon name="menu-outline"></ion-con>
+            </div>
+            <div class="relative" >
+                <a href="index.html">
+                    <div class="absolute top-0 z-10 h-16 w-16 md:h-24 md:w-24 rounded-full outline-4 outline-dotted outline-purple-700 animate-rotating duration-500 ease-out hover:animate-none cursor-pointer">
+                    </div>
+                    <img src="./src/images/logo.png" class="h-16 w-24 md:h-24 md:24 z-20" alt="logo" srcset="">
+                </a>
+            </div>
+            <div class="flex items-start md:items-center">
+                <div class="hidden md:grid grid-cols-6 gap-x-10 grow items-stretch place-content-center justify-items-center px-5 max-w-7xl dark:text-white ">
+                    <a href="index.html">
+                        <div >
+                            Home
+                        </div>
+                    </a>
+                    <a href="menu.html">
+                        <div>
+                            Menus
+                        </div>
+                    </a>
+                    <a href="gallery.html">
+                        <div>
+                            Gallery
+                        </div>
+                    </a>
+                    <a href="blogs.html">
+                        <div>
+                            Blogs
+                        </div>
+                    </a>
+                    <a href="faqs.html">
+                        <div class="border-b-4 border-purple-400">
+                            Faq
+                        </div>
+                    </a>
+                    <a href="contacts.html">
+                        <div>
+                            Contacts
+                        </div>
+                    </a>
+
+                </div>
+                <div class="w-5 h-5">
+                    <div id="light" class=" cursor-pointer place-self-center dark:text-white" title="Normal Mode" onclick="changeTheme('light')">
+                        <ion-icon name="sunny-outline"></ion-icon>
+                    </div>
+                    <div id="dark" class="hidden cursor-pointer place-self-center" title="Dark mode" onclick="changeTheme('dark')">
+                        <ion-icon name="moon"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </header>
+
+   <section class="py-10 bg-gray-50 sm:py-16 lg:py-24">
+    <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                Explore Common Questions
+            </h2>
+        </div>
+        <div class="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question1" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">How can I get started?</span>
+                    <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer1" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>Getting started is easy! Sign up for an account, and you'll have access to our platform's
+                        features. No credit card required for the initial signup.</p>
+                </div>
+            </div>
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question2" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">What is the pricing structure?</span>
+                    <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer2" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>Our pricing structure is flexible. We offer both free and paid plans. You can choose the one
+                        that
+                        suits your needs and budget.</p>
+                </div>
+            </div>
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question3" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">What kind of support do you provide?</span>
+                    <svg id="arrow3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer3" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>We offer comprehensive customer support. You can reach out to our support team through
+                        various
+                        channels, including email, chat, and a knowledge base.</p>
+                </div>
+            </div>
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question4" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">Can I cancel my subscription anytime?</span>
+                    <svg id="arrow4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer4" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>Yes, you can cancel your subscription at any time without any hidden fees. We believe in
+                        providing a hassle-free experience for our users.</p>
+                </div>
+            </div>
+        </div>
+        <p class="text-center text-gray-600 textbase mt-9">
+            Still have questions?
+            <span class="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline">Contact
+                our support
+            </span>
+        </p>
+    </div>
+    <script>
+        // JavaScript to toggle the answers and rotate the arrows
+        document.querySelectorAll('[id^="question"]').forEach(function(button, index) {
+            button.addEventListener('click', function() {
+                var answer = document.getElementById('answer' + (index + 1));
+                var arrow = document.getElementById('arrow' + (index + 1));
+
+                if (answer.style.display === 'none' || answer.style.display === '') {
+                    answer.style.display = 'block';
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.style.display = 'none';
+                    arrow.style.transform = 'rotate(-180deg)';
+                }
+            });
+        });
+    </script>
+</section>
+
+
+   <script>
+        let lightIcon = document.getElementById('light')
+        let darkIcon = document.getElementById('dark')
+        changeTheme(localStorage.theme)
+        function changeTheme(theme){
+            if(theme === "light"){
+                document.documentElement.classList.remove('dark')
+                lightIcon.classList.add('hidden')
+                darkIcon.classList.remove('hidden')
+            }else if(theme === 'dark'){
+                document.documentElement.classList.add('dark')
+                lightIcon.classList.remove('hidden')
+                darkIcon.classList.add('hidden')
+            }
+            localStorage.setItem('theme', theme)
+        }
+   </script>
+
+</body>
+</html>
