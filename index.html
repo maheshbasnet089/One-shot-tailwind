@@ -12,7 +12,7 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
 </head>
 <body class="font-domine">
-   <header class="sticky top-0 z-20 bg-purple-100 text-purple-100 w-full h-12 md:h-auto">
+   <header class="sticky top-0 z-20 bg-purple-100 text-purple-800 w-full h-12 md:h-auto">
         <div class="flex flex-row justify-between md:items-end px-5 md:px-100 py-2">
             <div class="md:hidden">
                 
@@ -26,9 +26,9 @@
                 </a>
             </div>
             <div class="flex items-start md:items-center">
-                <div class="hidden md:grid">
+                <div class="hidden md:grid grid-cols-6 gap-x-10 grow items-stretch place-content-center justify-items-center px-5 max-w-7xl ">
                     <a href="index.html">
-                        <div>
+                        <div class="border-b-4 border-purple-400">
                             Home
                         </div>
                     </a>
@@ -58,6 +58,14 @@
                         </div>
                     </a>
 
+                </div>
+                <div class="w-5 h-5">
+                    <div id="light" class=" cursor-pointer place-self-center" title="Normal Mode">
+                        <ion-icon name="sunny-outline"></ion-icon>
+                    </div>
+                    <div id="dark" class="hidden cursor-pointer place-self-center" title="Dark mode">
+                        <ion-icon name="moon"></ion-icon>
+                    </div>
                 </div>
             </div>
         </div>
