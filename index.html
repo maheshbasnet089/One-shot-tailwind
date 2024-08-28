@@ -12,7 +12,7 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
 </head>
 <body class="font-domine">
-   <header class="sticky top-0 z-20 bg-purple-100 text-purple-800 w-full h-12 md:h-auto">
+   <header class="sticky top-0 z-20  bg-purple-100 text-purple-800 w-full h-12 md:h-auto dark:bg-slate-800 shadow-md dark:shadow-zinc-700">
         <div class="flex flex-row justify-between md:items-end px-5 md:px-100 py-2">
             <div class="md:hidden">
                 
@@ -26,7 +26,7 @@
                 </a>
             </div>
             <div class="flex items-start md:items-center">
-                <div class="hidden md:grid grid-cols-6 gap-x-10 grow items-stretch place-content-center justify-items-center px-5 max-w-7xl ">
+                <div class="hidden md:grid grid-cols-6 gap-x-10 grow items-stretch place-content-center justify-items-center px-5 max-w-7xl dark:text-white ">
                     <a href="index.html">
                         <div class="border-b-4 border-purple-400">
                             Home
@@ -60,15 +60,34 @@
 
                 </div>
                 <div class="w-5 h-5">
-                    <div id="light" class=" cursor-pointer place-self-center" title="Normal Mode">
+                    <div id="light" class=" cursor-pointer place-self-center dark:text-white" title="Normal Mode" onclick="changeTheme('light')">
                         <ion-icon name="sunny-outline"></ion-icon>
                     </div>
-                    <div id="dark" class="hidden cursor-pointer place-self-center" title="Dark mode">
+                    <div id="dark" class="hidden cursor-pointer place-self-center" title="Dark mode" onclick="changeTheme('dark')">
                         <ion-icon name="moon"></ion-icon>
                     </div>
                 </div>
             </div>
         </div>
    </header>
+
+   <script>
+        let lightIcon = document.getElementById('light')
+        let darkIcon = document.getElementById('dark')
+        changeTheme(localStorage.theme)
+        function changeTheme(theme){
+            if(theme === "light"){
+                document.documentElement.classList.remove('dark')
+                lightIcon.classList.add('hidden')
+                darkIcon.classList.remove('hidden')
+            }else if(theme === 'dark'){
+                document.documentElement.classList.add('dark')
+                lightIcon.classList.remove('hidden')
+                darkIcon.classList.add('hidden')
+            }
+            localStorage.setItem('theme', theme)
+        }
+   </script>
+
 </body>
 </html>
